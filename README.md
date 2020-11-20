@@ -10,4 +10,4 @@ GitHub REST API playground
 * Run `npm start` to run the project
 
 ### Documentation
-https://docs.google.com/document/d/1i3dYjnCA-HUlbvVOV59Foo6f0abc2AZXDXSZIdf62NM/edit?usp=sharing
+https://bit.ly/3kRkM2e
