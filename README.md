@@ -3,6 +3,8 @@
 # github-rest-api-v3
 GitHub REST API playground
 
+https://adityabisoi.github.io/github-rest-api-v3/
+
 ### Installation
 * Fork and clone the project to your local machine
 * `cd github-rest-api-v3/`
@@ -10,4 +12,4 @@ GitHub REST API playground
 * Run `npm start` to run the project
 
 ### Documentation
-https://docs.google.com/document/d/1i3dYjnCA-HUlbvVOV59Foo6f0abc2AZXDXSZIdf62NM/edit?usp=sharing
+https://bit.ly/3kRkM2e
