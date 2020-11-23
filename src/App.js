@@ -11,7 +11,7 @@ const App = () => {
   }
 
   const getDetails=()=>{
-    axios.get('https://api.github.com/users/adityabisoi/repos')
+    axios.get(`https://api.github.com/users/${username}/repos`)
       .then(data=>console.log(data))
   }
 
