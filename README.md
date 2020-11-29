@@ -16,4 +16,4 @@ https://bit.ly/3kRkM2e
 
 ## 🏆 Contributing
 
-Please read  [CONTRIBUTING.md](CONTRIBUTING.md)  for information on how to contribute to profext-extension.
+Please read  [CONTRIBUTING.md](CONTRIBUTING.md)  for information on how to contribute to github-rest-api-v3.
