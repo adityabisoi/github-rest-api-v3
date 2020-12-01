@@ -47,7 +47,7 @@ const App = () => {
           following: following.statusText === 'OK' ? following.data : null,
           starred: starred.statusText === 'OK' ? starred.data : null,
         };
-      }))
+      }), err => console.log(err))
       .then(data => {
         // Add an entry for forks
         const results = {
@@ -56,7 +56,8 @@ const App = () => {
         };
 
         console.log(results);
-      });
+      }, err => console.log(err))
+      .catch(err => console.log(err));
   }
 
   const sendUsername=(e)=>{
