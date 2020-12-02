@@ -39,7 +39,7 @@ const App = () => {
               following = responses[3],
               starred = responses[4];
 
-        return {
+        const data = {
           username,
           repos: repos.statusText === 'OK' ? repos.data : null,
           gists: gists.statusText === 'OK' ? gists.data : null,
@@ -47,16 +47,9 @@ const App = () => {
           following: following.statusText === 'OK' ? following.data : null,
           starred: starred.statusText === 'OK' ? starred.data : null,
         };
-      }), err => console.log(err))
-      .then(data => {
-        // Add an entry for forks
-        const results = {
-          ...data,
-          forks: data.repos.filter(repo => repo.fork)
-        };
 
-        console.log(results);
-      }, err => console.log(err))
+        console.log(data);
+      }), err => console.log(err))
       .catch(err => console.log(err));
   }
 
