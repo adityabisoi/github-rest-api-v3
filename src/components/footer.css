@@ -1,0 +1,14 @@
+footer {
+	font-family: 'Roboto Condensed';
+	min-height: 50px;
+	width: 100%;
+	font-size: large;
+}
+
+footer a {
+	color: rgb(233, 243, 255);
+}
+
+footer a:hover {
+	color: rgb(255, 255, 255);
+}
