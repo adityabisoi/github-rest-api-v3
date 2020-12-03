@@ -39,7 +39,7 @@ const api = {
 					starred: starred.statusText === 'OK' ? starred.data : null,
 				};
 
-				console.log(data);
+				return data;
 			}), err => console.log(err))
 	}
 };
