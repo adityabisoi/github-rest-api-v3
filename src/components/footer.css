@@ -6,9 +6,9 @@ footer {
 }
 
 footer a {
-	color: rgb(190, 190, 224);
+	color: rgb(233, 243, 255);
 }
 
 footer a:hover {
-	color: rgb(130, 116, 255);
+	color: rgb(255, 255, 255);
 }

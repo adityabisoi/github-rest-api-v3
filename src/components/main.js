@@ -43,7 +43,7 @@ const Main = () => {
 							</InputGroup>
 						</Col>
 						<Col xs={12} md={2} className='mb-1 mb-md-0' >
-							<Button block type='submit' className='w-md-50' color='primary'>Submit</Button>
+							<Button block type='submit' color='primary'>Submit</Button>
 						</Col>
 					</FormGroup>
 				</Form>
