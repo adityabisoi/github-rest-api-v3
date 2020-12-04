@@ -21,5 +21,6 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the reposi
 )</a>
 
 ## Open Source Events
-This repository is a part of NJHACK, <details>. For more details, you can check out <website/link>
-  <logo>
+This project is a part of NJHACK. For more details, you can check out [this link](https://njackwinterofcode.github.io/)
+
+![NJHACK Logo](https://user-images.githubusercontent.com/42573842/101052659-eb1b1600-35ac-11eb-9a80-cfaa33a29b04.png)
