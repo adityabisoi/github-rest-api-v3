@@ -1,8 +1,6 @@
 [![Build Status](https://travis-ci.org/adityabisoi/github-rest-api-v3.svg?branch=main)](https://travis-ci.org/adityabisoi/github-rest-api-v3) 
 # github-rest-api-v3
-GitHub REST API playground
-
-You can access it [here](https://adityabisoi.github.io/github-rest-api-v3/)
+This repo holds the code for the GitHub REST API playground. You can access the API [here](https://adityabisoi.github.io/github-rest-api-v3/)
 
 ## Installation
 * Fork and clone the project to your local machine
@@ -19,3 +17,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the reposi
 ## Support
 <a href="https://gitter.im/github-rest-api-v3/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" rel="some text">![Foo](https://icon-icons.com/icons2/2530/PNG/72/gitter_button_icon_151850.png
 )</a>
+
+## Open Source Events
+This project is a part of NJHACK. For more details, you can check out [this link](https://njackwinterofcode.github.io/)
+
+![NJHACK Logo](https://user-images.githubusercontent.com/42573842/101052659-eb1b1600-35ac-11eb-9a80-cfaa33a29b04.png)
