@@ -18,6 +18,8 @@ const Compare =()=>{
     const updateUsername1 =(e)=>setUsername1(e.target.value);
     const updateUsername2 =(e)=>setUsername2(e.target.value);
 
+    const features=["followers","following","gists","repos","starred"];
+
     const getData = (e) =>{
         e.preventDefault();
         api.getDetails(username1)
@@ -38,14 +40,14 @@ const Compare =()=>{
     }
 
     return(
-        <div className="main">
+        <div className="main" style={{background:"#fff",boxShadow:"1px solid #333",margin:"20pt",padding:"20pt"}}>
             <div className="form">
-            <Form onSubmit={getData}>
+            <Form onSubmit={getData} >
 					<FormGroup row>
-						<Label for='username1' className='offset-md-1' xs={12} md={1}>
+						<Label for='username1' className='offset-md-1' >
 							<span className='float-left float-md-right'>Username 1: </span>
 						</Label>
-						<Col xs={12} md={8} className='mb-2 mb-md-0'>
+						<Col className='mb-2 mb-md-0'>
 							<InputGroup>
 								<InputGroupAddon addonType='prepend'>
 									<Button className='bg-light text-dark font-weight-bold border'>@</Button>
@@ -54,10 +56,10 @@ const Compare =()=>{
 									value={username1} onChange={updateUsername1}/>
 							</InputGroup>
 						</Col>
-                        <Label for='username2' className='offset-md-1' xs={12} md={1}>
+                        <Label for='username2' className='offset-md-1'>
 							<span className='float-left float-md-right'>Username 2: </span>
 						</Label>
-						<Col xs={12} md={8} className='mb-2 mb-md-0'>
+						<Col className='mb-2 mb-md-0'>
 							<InputGroup>
 								<InputGroupAddon addonType='prepend'>
 									<Button className='bg-light text-dark font-weight-bold border'>@</Button>
@@ -71,8 +73,8 @@ const Compare =()=>{
 						</Col>
 					</FormGroup>
 				</Form>
-                <div className="comparisonTable">
-                    <table className="table">
+                <div className="comparisonTable" style={{textAlign:"center"}}>
+                    <table className="table table-responsive table-hover ">
                         <thead>
                             <tr>
                                 <th>Feature :</th>
@@ -82,7 +84,37 @@ const Compare =()=>{
 
                         </thead>
                         <tbody>
-                            {console.log({info1}.count())}
+                                <tr>
+                                    <td>Followers</td>
+                                    <td>{info1.followers.length}</td>
+                                    <td>{info2.followers.length}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Following</td>
+                                    <td>{info1.following.length}</td>
+                                    <td>{info2.following.length}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Gists</td>
+                                    <td>{info1.gists.length}</td>
+                                    <td>{info2.gists.length}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Repos</td>
+                                    <td>{info1.repos.length}</td>
+                                    <td>{info2.repos.length}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>Starred</td>
+                                    <td>{info1.starred.length}</td>
+                                    <td>{info2.starred.length}</td>
+
+                                </tr>
+                            
 
                         </tbody>
                     </table>
