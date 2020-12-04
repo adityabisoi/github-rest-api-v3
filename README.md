@@ -13,6 +13,11 @@ https://adityabisoi.github.io/github-rest-api-v3/
 ## Documentation
 https://bit.ly/3kRkM2e
 
+##  💼  Code of Conduct
+
+We want to facilitate a healthy and constructive community behavior by adopting and enforcing our code of conduct.
+Please adhere toward our [Code-of-Conduct](Code-of-Conduct.md).
+
 ## 🏆 Contributing
 
 Please read  [CONTRIBUTING.md](CONTRIBUTING.md)  for information on how to contribute to github-rest-api-v3.
