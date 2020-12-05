@@ -73,6 +73,7 @@ const Compare =()=>{
 						</Col>
 					</FormGroup>
 				</Form>
+                {info1 && info2 ?
                 <div className="comparisonTable" style={{textAlign:"center"}}>
                     <table className="table table-responsive table-hover ">
                         <thead>
@@ -120,6 +121,7 @@ const Compare =()=>{
                     </table>
 
                 </div>
+                :""}
             </div>
         </div>
 
