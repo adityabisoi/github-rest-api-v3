@@ -11,6 +11,10 @@ This repo holds the code for the GitHub REST API playground. You can access the 
 ## Documentation
 You can refer to the documentation [here](https://bit.ly/3kRkM2e)
 
+##  💼  Code of Conduct
+We want to facilitate a healthy and constructive community behavior by adopting and enforcing our code of conduct.
+Please adhere toward our [Code-of-Conduct](Code-of-Conduct.md).
+
 ## Contributing 🏆
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the repository (github-rest-api-v3)
 
