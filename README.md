@@ -8,6 +8,9 @@ This repo holds the code for the GitHub REST API playground. You can access the 
 * Run `npm install` to install ReactJS dependencies
 * Run `npm start` to run the project
 
+## Linting
+* To fix all linting errors, simply run `npm run lint -- --fix`
+
 ## Documentation
 You can refer to the documentation [here](https://bit.ly/3kRkM2e)
 
