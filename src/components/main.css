@@ -1,0 +1,13 @@
+main {
+	min-height: 400px;
+}
+
+button.btn[type=submit] {
+	width: 50%;
+}
+
+@media (max-width: 768px) {
+	button.btn[type=submit] {
+		width: 100%;
+	}
+}
