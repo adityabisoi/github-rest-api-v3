@@ -9,8 +9,8 @@ const App = () => {
   return(
     <div className="App">
       <Header/>
-      <Route exact path="/"><Main /></Route>
-      <Route path="/compare"><Compare/></Route>
+      <Route exact path="/github-rest-api-v3/"><Main /></Route>
+      <Route path="/github-rest-api-v3/compare"><Compare/></Route>
       <Footer/>
     </div>
   );

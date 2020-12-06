@@ -1,8 +1,11 @@
 const Visualization = (props) => {
-
 	return(
+		
+		props.data ? 
+		
 		<div>
-			<h2>{props.data && props.data.username}</h2>
+			<img src={props.data.profile.avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}}/>		
+			<h2>{props.data && props.data.profile.name}</h2>
 			<div className="row">
 				<div className="col-sm">
 					<h4>Total Repos: {props.data && props.data.repos.length}</h4>					
@@ -12,7 +15,7 @@ const Visualization = (props) => {
 								<th>S.No</th>
 								<th>Name of the Repo</th>
 								<th>Open Issues</th>
-								<th>Language</th>
+								<th>Stars</th>
 								<th>Forks</th>
 							</tr>
 							
@@ -24,8 +27,8 @@ const Visualization = (props) => {
 							return(<tr>
 								<td>{index}</td>
 								<td><a href={key.html_url}>{key.name}</a></td>
-								<td>{key.open_issues_count}</td>
-								<td><a href={key.languages_url}>{key.language}</a></td>
+								<td><a href={key.html_url+'/issues'}>{key.open_issues_count}</a></td>
+								<td>{key.stargazers_count}</td>
 								<td>{key.forks_count}</td>
 							</tr>)
 
@@ -83,27 +86,14 @@ const Visualization = (props) => {
 
 						</tbody>
 					</table>
-					<hr></hr>
-					<table className="table table-responsive">
-						<thead>
-							<tr>
-								<th>Total Starred</th>
-								<th>Total Gists</th>
-							</tr>
-
-						</thead>
-						<tbody>
-							<tr>
-								<td>{props.data && props.data.starred.length}</td>
-								<td>{props.data && props.data.gists.length}</td>
-							</tr>
-						</tbody>
-					</table>
+					
 					
 				</div>
 				
 			</div>
+			
 		</div>
+		:""
 
 	);
 	 // TODO

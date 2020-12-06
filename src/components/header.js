@@ -4,7 +4,7 @@ import {useHistory } from 'react-router-dom';
 const Header = () => {
 	const history=useHistory();
 	const handleClick=()=>{
-		history.push('/compare');
+		history.push('/github-rest-api-v3/compare');
 	}
 	return (
 		<header >
