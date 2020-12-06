@@ -20,6 +20,6 @@ about: Suggest an idea for this project
 (Add any other context or screenshots about the feature request.)
 
 ## Issue submission guide:
-- - [ ] Read the [Contribution guide](https://github.com/adityabisoi/github-rest-api-v3/blob/main/CONTRIBUTING.md)?
-- - [ ] Have you checked that there is no [issue](https://github.com/adityabisoi/github-rest-api-v3/issues) for the same feature?
-- - [ ] Your proposed feature doesn't break any existing feature.
+-  [ ] Read the [Contribution guide](https://github.com/adityabisoi/github-rest-api-v3/blob/main/CONTRIBUTING.md)?
+-  [ ] Have you checked that there is no [issue](https://github.com/adityabisoi/github-rest-api-v3/issues) for the same feature?
+-  [ ] Your proposed feature doesn't break any existing feature.
