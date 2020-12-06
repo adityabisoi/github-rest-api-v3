@@ -8,10 +8,14 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
     "gh-pages": "^3.1.0",
+    "jquery": "^3.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "reactstrap": "^8.7.1",
+    "typeface-roboto-condensed": "^1.1.13",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -43,6 +47,10 @@
   },
   "devDependencies": {
     "eslint": "^7.14.0",
-    "eslint-plugin-react": "^7.21.5"
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
