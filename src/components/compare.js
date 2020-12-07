@@ -75,7 +75,7 @@ const Compare =()=>{
 				</Form>
                 {info1 && info2 ?
                 <div className="comparisonTable" style={{textAlign:"center"}}>
-                    <table className="table table-responsive table-hover ">
+                    <table className="table table-responsive table-hover " style={{display:"inline"}}>
                         <thead>
                             <tr>
                                 <th>Feature :</th>
