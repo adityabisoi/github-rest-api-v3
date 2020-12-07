@@ -8,8 +8,15 @@ This repo holds the code for the GitHub REST API playground. You can access the 
 * Run `npm install` to install ReactJS dependencies
 * Run `npm start` to run the project
 
+## Linting
+* To fix all linting errors, simply run `npm run lint -- --fix`
+
 ## Documentation
 You can refer to the documentation [here](https://bit.ly/3kRkM2e)
+
+##  💼  Code of Conduct
+We want to facilitate a healthy and constructive community behavior by adopting and enforcing our code of conduct.
+Please adhere toward our [Code-of-Conduct](Code-of-Conduct.md).
 
 ## Contributing 🏆
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the repository (github-rest-api-v3)

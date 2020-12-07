@@ -1,4 +1,11 @@
+import {useHistory } from 'react-router-dom';
+
+
 const Visualization = (props) => {
+	const history=useHistory();
+	const handleClick=()=>{
+		history.push('/github-rest-api-v3/compare');
+	}
 	return(
 		
 		props.data ? 
@@ -93,7 +100,19 @@ const Visualization = (props) => {
 			</div>
 			
 		</div>
-		:""
+		:
+		<div class="jumbotron">
+		<h1 class="display-4">Hey, User!</h1>
+		<p class="lead">Please Enter Your Username For Getting Stats!</p>
+		<hr class="my-4"></hr>
+		<p>If You Wanna Compare Yourself?</p>
+		<p class="lead">
+		  <a class="btn btn-success btn" onClick={handleClick} role="button">Click Here</a>
+		</p>
+		
+	  	</div>
+		  
+	  
 
 	);
 	 // TODO
