@@ -103,19 +103,12 @@ const Visualization = (props) => {
 		:
 		<div class="jumbotron">
 		<h1 class="display-4">Hey, User!</h1>
-		<p class="lead">Please Enter Your Username For Getting Stats!</p>
-		<hr class="my-4"></hr>
-		<p>If You Wanna Compare Yourself?</p>
-		<p class="lead">
-		  <a class="btn btn-success btn" onClick={handleClick} role="button">Click Here</a>
-		</p>
-		
+		<p class="lead">Please Enter Your Username For Getting Stats!</p>		
 	  	</div>
 		  
 	  
 
 	);
-	 // TODO
 }
 
 export default Visualization;
