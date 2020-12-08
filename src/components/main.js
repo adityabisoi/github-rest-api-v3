@@ -11,13 +11,16 @@ import './main.css';
 const Main = () => {
 	const [username, setUsername] = useState('');
 	const [info, setInfo] = useState(null);
+	const [loading, setLoading]=useState(false);
 
 	const updateUsername = (e) => setUsername(e.target.value);
 
 	const sendUsername = (e) => {
+		setLoading(true);
 		e.preventDefault();
 		api.getDetails(username)
 			.then(data => {
+				setLoading(true);
 				setInfo(data);
 				return data;
 			})
@@ -47,7 +50,12 @@ const Main = () => {
 						</Col>
 					</FormGroup>
 				</Form>
-				<Visualization data={info}/>
+				{loading?
+                <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+                </div>:<Visualization data={info}/>}
+				
+				
 			</main>
 		</div>
 	);

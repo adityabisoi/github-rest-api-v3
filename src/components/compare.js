@@ -14,6 +14,7 @@ const Compare =()=>{
     const [username2,setUsername2]=useState('');
     const [info1,setInfo1]=useState('');
     const [info2,setInfo2]=useState('');
+    const [loading,setLoading]=useState(false);
 
     const updateUsername1 =(e)=>setUsername1(e.target.value);
     const updateUsername2 =(e)=>setUsername2(e.target.value);
@@ -21,10 +22,12 @@ const Compare =()=>{
     const features=["followers","following","gists","repos","starred"];
 
     const getData = (e) =>{
+        setLoading(true);
         e.preventDefault();
         api.getDetails(username1)
 			.then(data => {
-				setInfo1(data);
+                setLoading(false);
+                setInfo1(data);
 				return data;
 			})
 			.then(data => console.log("data 1",data))
@@ -40,6 +43,7 @@ const Compare =()=>{
     }
 
     return(
+        
         <div className="main" style={{background:"#fff",boxShadow:"1px solid #333",margin:"20pt",padding:"20pt"}}>
             <div className="form">
             <Form onSubmit={getData} >
@@ -73,6 +77,11 @@ const Compare =()=>{
 						</Col>
 					</FormGroup>
 				</Form>
+                {loading?
+                <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+                </div>:""}
+
                 {info1 && info2 ?
                 <div className="comparisonTable" style={{textAlign:"center"}}>
                     <table className="table table-responsive table-hover " style={{display:"inline"}}>
@@ -121,7 +130,8 @@ const Compare =()=>{
                     </table>
 
                 </div>
-                :""}
+                :""               
+                }
             </div>
         </div>
 
