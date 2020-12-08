@@ -4,8 +4,8 @@ import { Input, Form, FormGroup, Label,
 	Button,
 	InputGroup,
 	InputGroupAddon} from 'reactstrap';
-import api from '../services/GitHub';
-import Visualization from './visualization';
+import api from '../services/Github';
+import Visualization from './Visualization';
 import './main.css';
 
 const Main = () => {
