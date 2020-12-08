@@ -15,12 +15,12 @@ const Main = () => {
 
 	const updateUsername = (e) => setUsername(e.target.value);
 
-	const sendUsername = (e) => {
-		setLoading(true);
+	const sendUsername = (e) => {	
 		e.preventDefault();
+		setLoading(true);
 		api.getDetails(username)
 			.then(data => {
-				setLoading(true);
+				setLoading(false);
 				setInfo(data);
 				return data;
 			})

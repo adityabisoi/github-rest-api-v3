@@ -14,7 +14,7 @@ const Compare =()=>{
     const [username2,setUsername2]=useState('');
     const [info1,setInfo1]=useState('');
     const [info2,setInfo2]=useState('');
-    const [loading,setLoading]=useState(false);
+    const [isloading,setIsloading]=useState('0');
 
     const updateUsername1 =(e)=>setUsername1(e.target.value);
     const updateUsername2 =(e)=>setUsername2(e.target.value);
@@ -22,12 +22,15 @@ const Compare =()=>{
     const features=["followers","following","gists","repos","starred"];
 
     const getData = (e) =>{
-        setLoading(true);
+        setIsloading('1');
+        
         e.preventDefault();
+        console.log("isloading",isloading);
         api.getDetails(username1)
 			.then(data => {
-                setLoading(false);
+                
                 setInfo1(data);
+                setIsloading('0');
 				return data;
 			})
 			.then(data => console.log("data 1",data))
@@ -77,12 +80,15 @@ const Compare =()=>{
 						</Col>
 					</FormGroup>
 				</Form>
-                {loading?
-                <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
-                </div>:""}
-
-                {info1 && info2 ?
+                {isloading=='1'?
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                :
+                
+                info1 && info2 ?
                 <div className="comparisonTable" style={{textAlign:"center"}}>
                     <table className="table table-responsive table-hover " style={{display:"inline"}}>
                         <thead>
