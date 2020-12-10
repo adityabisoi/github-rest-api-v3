@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/adityabisoi/github-rest-api-v3.svg?branch=main)](https://travis-ci.org/adityabisoi/github-rest-api-v3) 
 # github-rest-api-v3
-This repo holds the code for the GitHub REST API playground. You can access the API [here](https://adityabisoi.github.io/github-rest-api-v3/)
+This repo holds the code for the GitHub REST API playground. The App is hosted live at [github-rest-api-v3](https://adityabisoi.github.io/github-rest-api-v3/)
 
 ## Installation
 * Fork and clone the project to your local machine
