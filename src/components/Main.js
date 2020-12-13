@@ -13,8 +13,6 @@ const Main = () => {
 	const [loading, setLoading]=useState(false);
 
 	const updateUsername = (e) => {
-		if(api===undefined)
-	console.log("bla")
 		setUsername(e.target.value);
 	}
 	const sendUsername = (e) => {	
