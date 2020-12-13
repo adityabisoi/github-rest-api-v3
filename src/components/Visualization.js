@@ -7,13 +7,13 @@ const Visualization = (props) => {
 	// 	history.push('/github-rest-api-v3/compare');
 	// }
 	return(
-		props.data ? 
+		props.data ?
 		<div>
-			<img src={props.data.profile.avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>		
+			<img src={props.data.profile.avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>
 			<h2>{props.data && props.data.profile.name}</h2>
 			<div className="row">
 				<div className="col-sm">
-					<h4>Total Repos: {props.data && props.data.repos.length}</h4>					
+					<h4>Total Repos: {props.data && props.data.repos.length}</h4>
 					<table className="table table-responsive">
 						<thead>
 							<tr>
@@ -23,12 +23,12 @@ const Visualization = (props) => {
 								<th>Stars</th>
 								<th>Forks</th>
 							</tr>
-							
+
 
 						</thead>
 						<tbody>
 						{props.data && props.data.repos.map((key,index)=>{
-							
+
 							return(<tr>
 								<td>{index}</td>
 								<td><a href={key.html_url}>{key.name}</a></td>
@@ -40,7 +40,7 @@ const Visualization = (props) => {
 						})}
 						</tbody>
 					</table>
-					
+
 
 				</div>
 				<div className="col-sm">
@@ -91,20 +91,20 @@ const Visualization = (props) => {
 
 						</tbody>
 					</table>
-					
-					
+
+
 				</div>
-				
+
 			</div>
-			
+
 		</div>
 		:
 		<div class="jumbotron">
 		<h1 class="display-4">Hey, User!</h1>
-		<p class="lead">Please Enter Your Username For Getting Stats!</p>		
+		<p class="lead">Please Enter Your Username For Getting Stats!</p>
 	  	</div>
-		  
-	  
+
+
 
 	);
 }
