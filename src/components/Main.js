@@ -7,17 +7,21 @@ import { Input, Form, FormGroup, Label,
 import api from '../services/Github';
 import Visualization from './Visualization';
 import './main.css';
-
 const Main = () => {
 	const [username, setUsername] = useState('');
 	const [info, setInfo] = useState(null);
 	const [loading, setLoading]=useState(false);
 
-	const updateUsername = (e) => setUsername(e.target.value);
-
+	const updateUsername = (e) => {
+		if(api===undefined)
+	console.log("bla")
+		setUsername(e.target.value);
+	}
 	const sendUsername = (e) => {	
 		e.preventDefault();
 		setLoading(true);
+		//const check=api.getDetails(username)
+		
 		api.getDetails(username)
 			.then(data => {
 				setLoading(false);
@@ -51,8 +55,8 @@ const Main = () => {
 					</FormGroup>
 				</Form>
 				{loading?
-                <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
+                <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
                 </div>:<Visualization data={info}/>}
 				
 				
