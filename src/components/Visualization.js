@@ -6,6 +6,9 @@ const Visualization = (props) => {
 	// const handleClick=()=>{
 	// 	history.push('/github-rest-api-v3/compare');
 	// }
+	//console.log(props.data)
+	if(props.data===undefined)
+	window.alert("Please enter valid user name");
 	return(
 		props.data ? 
 		<div>
@@ -99,9 +102,9 @@ const Visualization = (props) => {
 			
 		</div>
 		:
-		<div class="jumbotron">
-		<h1 class="display-4">Hey, User!</h1>
-		<p class="lead">Please Enter Your Username For Getting Stats!</p>		
+		<div className="jumbotron">
+		<h1 className="display-4">Hey, User!</h1>
+		<p className="lead">Please Enter Your Username For Getting Stats!</p>		
 	  	</div>
 		  
 	  
