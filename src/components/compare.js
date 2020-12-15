@@ -92,52 +92,88 @@ const Compare =()=>{
                 
                 info1 && info2 ?
                 <div className="comparisonTable" style={{textAlign:"center"}}>
-                    <table className="table table-responsive table-hover " style={{display:"inline"}}>
+                    <table className="table table-hover " style={{textAlign:"left"}}>
                         <thead>
                             <tr>
                                 <th>Feature :</th>
                                 <th>{username1}</th>
                                 <th>{username2}</th>
-                                <th>Difference Status</th>
                             </tr>
 
                         </thead>
                         <tbody>
+                                {info1.followers.length-info2.followers.length>0
+                                ?
                                 <tr>
-                                    <td>Followers</td>
-                                    <td>{info1.followers.length}</td>
+                                    <td>Followers</td> 
+                                    <td>{info1.followers.length} <span className="text-success">&emsp;+{Math.abs(info1.followers.length-info2.followers.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.followers.length}</td>
-                                    <td className={` ${info1.followers.length-info2.followers.length>0 ? "text-success" : "text-danger"}`}>{info1.followers.length-info2.followers.length}</td>
-
                                 </tr>
+                                :
                                 <tr>
-                                    <td>Following</td>
-                                    <td>{info1.following.length}</td>
+                                    <td>Followers</td> 
+                                    <td>{info1.followers.length}</td>
+                                    <td>{info2.followers.length} <span className="text-success">&emsp;+{Math.abs(info1.followers.length-info2.followers.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
+                                </tr>
+                                }
+                                {info1.following.length-info2.following.length>0
+                                ?
+                                <tr>
+                                    <td>Following</td> 
+                                    <td>{info1.following.length} <span className="text-success">&emsp;+{Math.abs(info1.following.length-info2.following.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.following.length}</td>
-                                    <td className={` ${info1.following.length-info2.following.length>0 ? "text-success" : "text-danger"}`} >{info1.following.length-info2.following.length}</td>
-
                                 </tr>
+                                :
                                 <tr>
-                                    <td>Gists</td>
-                                    <td>{info1.gists.length}</td>
+                                    <td>Following</td> 
+                                    <td>{info1.following.length}</td>
+                                    <td>{info2.following.length} <span className="text-success">&emsp;+{Math.abs(info1.following.length-info2.following.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
+                                </tr>
+                                }
+                                {info1.gists.length-info2.gists.length>0
+                                ?
+                                <tr>
+                                    <td>Gists</td> 
+                                    <td>{info1.gists.length} <span className="text-success">&emsp;+{Math.abs(info1.gists.length-info2.gists.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.gists.length}</td>
-                                    <td className={` ${info1.gists.length-info2.gists.length>0 ? "text-success" : "text-danger"}`}>{info1.gists.length-info2.gists.length}</td>
-
                                 </tr>
+                                :
                                 <tr>
-                                    <td>Repos</td>
-                                    <td>{info1.repos.length}</td>
+                                    <td>Gists</td> 
+                                    <td>{info1.gists.length}</td>
+                                    <td>{info2.gists.length} <span className="text-success">&emsp;+{Math.abs(info1.gists.length-info2.gists.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
+                                </tr>
+                                }
+                                {info1.repos.length-info2.repos.length>0
+                                ?
+                                <tr>
+                                    <td>Repositories</td> 
+                                    <td>{info1.repos.length} <span className="text-success">&emsp;+{Math.abs(info1.repos.length-info2.repos.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.repos.length}</td>
-                                    <td className={` ${info1.repos.length-info2.repos.length>0 ? "text-success" : "text-danger"}`} >{info1.repos.length-info2.repos.length}</td>
-
                                 </tr>
+                                :
                                 <tr>
-                                    <td>Starred</td>
-                                    <td>{info1.starred.length}</td>
-                                    <td>{info2.starred.length}</td>
-                                    <td className={` ${info1.starred.length-info2.starred.length>0 ? "text-success" : "text-danger"}`} >{info1.starred.length-info2.starred.length}</td>
-
+                                    <td>Repositories</td> 
+                                    <td>{info1.repos.length}</td>
+                                    <td>{info2.repos.length} <span className="text-success">&emsp;+{Math.abs(info1.repos.length-info2.repos.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                 </tr>
+                                }
+                                {info1.starred.length-info2.starred.length>0
+                                ?
+                                <tr>
+                                    <td>Starred</td> 
+                                    <td>{info1.starred.length} <span className="text-success">&emsp;+{Math.abs(info1.starred.length-info2.starred.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
+                                    <td>{info2.starred.length}</td>
+                                </tr>
+                                :
+                                <tr>
+                                    <td>Starred</td> 
+                                    <td>{info1.starred.length}</td>
+                                    <td>{info2.starred.length} <span className="text-success">&emsp;+{Math.abs(info1.starred.length-info2.starred.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
+                                </tr>
+                                }
+
+                                
                             
 
                         </tbody>
