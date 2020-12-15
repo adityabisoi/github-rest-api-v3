@@ -1,9 +1,9 @@
 import './App.css';
-import Main from './components/main';
-import Header from './components/header';
-import Footer from './components/footer';
-import Compare from './components/compare';
-import {Link,Route,Switch} from 'react-router-dom';
+import Main from './components/Main';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Compare from './components/Compare';
+import {Route} from 'react-router-dom';
 
 const App = () => {
   return(

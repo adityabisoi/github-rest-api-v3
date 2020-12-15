@@ -4,8 +4,7 @@ import { Input, Form, FormGroup, Label,
 	Button,
 	InputGroup,
 	InputGroupAddon} from 'reactstrap';
-import api from '../services/GitHub';
-import Visualization from './visualization';
+import api from '../services/Github';
 import './main.css';
 
 const Compare =()=>{
@@ -21,7 +20,7 @@ const Compare =()=>{
     const updateUsername1 =(e)=>setUsername1(e.target.value);
     const updateUsername2 =(e)=>setUsername2(e.target.value);
 
-    const features=["followers","following","gists","repos","starred"];
+    // const features=["followers","following","gists","repos","starred"];
 
     const getData = (e) =>{
         setIsloading('1');
@@ -82,10 +81,10 @@ const Compare =()=>{
 						</Col>
 					</FormGroup>
 				</Form>
-                {isloading=='1'?
-                <div class="d-flex justify-content-center">
-                    <div class="spinner-border" role="status">
-                    <span class="sr-only">Loading...</span>
+                {isloading==='1'?
+                <div className="d-flex justify-content-center">
+                    <div className="spinner-border" role="status">
+                    <span className="sr-only">Loading...</span>
                     </div>
                 </div>
                 :

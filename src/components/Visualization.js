@@ -1,17 +1,18 @@
-import {useHistory } from 'react-router-dom';
+// import {useHistory } from 'react-router-dom';
 
 
 const Visualization = (props) => {
-	const history=useHistory();
-	const handleClick=()=>{
-		history.push('/github-rest-api-v3/compare');
-	}
+	// const history=useHistory();
+	// const handleClick=()=>{
+	// 	history.push('/github-rest-api-v3/compare');
+	// }
+	//console.log(props.data)
+	if(props.data===undefined)
+	window.alert("Please enter valid user name");
 	return(
-		
 		props.data ? 
-		
 		<div>
-			<img src={props.data.profile.avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}}/>		
+			<img src={props.data.profile.avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>		
 			<h2>{props.data && props.data.profile.name}</h2>
 			<div className="row">
 				<div className="col-sm">
@@ -61,7 +62,7 @@ const Visualization = (props) => {
 								return(
 									<tr>
 										<td>{index}</td>
-										<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}}/></td>
+										<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}} alt=""/></td>
 										<td><a href={key.html_url}>{key.login}</a></td>
 									</tr>
 								)
@@ -85,7 +86,7 @@ const Visualization = (props) => {
 								return(
 									<tr>
 										<td>{index}</td>
-										<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}}/></td>
+										<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}} alt=""/></td>
 										<td><a href={key.html_url}>{key.login}</a></td>
 									</tr>
 								)
@@ -101,21 +102,14 @@ const Visualization = (props) => {
 			
 		</div>
 		:
-		<div class="jumbotron">
-		<h1 class="display-4">Hey, User!</h1>
-		<p class="lead">Please Enter Your Username For Getting Stats!</p>
-		<hr class="my-4"></hr>
-		<p>If You Wanna Compare Yourself?</p>
-		<p class="lead">
-		  <a class="btn btn-success btn" onClick={handleClick} role="button">Click Here</a>
-		</p>
-		
+		<div className="jumbotron">
+		<h1 className="display-4">Hey, User!</h1>
+		<p className="lead">Please Enter Your Username For Getting Stats!</p>		
 	  	</div>
 		  
 	  
 
 	);
-	 // TODO
 }
 
 export default Visualization;

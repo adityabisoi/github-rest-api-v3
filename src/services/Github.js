@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const api = {
 	getDetails: (username) => {
 		// URLs to be used for different API endpointsz
@@ -32,7 +31,7 @@ const api = {
 						following = responses[3],
 						starred = responses[4],
 						profile = responses[5];
-
+				
 				const data = {
 					username,
 					repos: repos.statusText === 'OK' ? repos.data : null,
@@ -42,9 +41,11 @@ const api = {
 					starred: starred.statusText === 'OK' ? starred.data : null,
 					profile: profile.statusText === 'OK' ? profile.data : null,
 				};
-
+				
 				return data;
-			}), err => console.log(err))
+			}), err => {console.log(err);
+			
+			})
 	}
 };
 
