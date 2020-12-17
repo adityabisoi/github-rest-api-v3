@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Input, Form, FormGroup, Label,
-	Col, 
+	Col,
 	Button,
 	InputGroup,
 	InputGroupAddon} from 'reactstrap';
@@ -10,12 +10,19 @@ import './main.css';
 const Main = () => {
 	const [username, setUsername] = useState('');
 	const [info, setInfo] = useState(null);
-	const [loading, setLoading]=useState(false);
+	const [loading, setLoading] = useState(false);
+	var validUsername = true;
 
+<<<<<<< HEAD
 	const updateUsername = (e) => {
 		setUsername(e.target.value);
 	}
 	const sendUsername = (e) => {	
+=======
+	const updateUsername = (e) => setUsername(e.target.value);
+
+	const sendUsername = (e) => {
+>>>>>>> dev
 		e.preventDefault();
 		setLoading(true);
 		//const check=api.getDetails(username)
@@ -24,10 +31,26 @@ const Main = () => {
 			.then(data => {
 				setLoading(false);
 				setInfo(data);
+				//branch tracking test
+				//checking data status
+				if(data === undefined || data === null) {
+					validUsername = false;
+					console.log('false part')
+				} else {
+					validUsername = true;
+					console.log('true part')
+				}
+				console.log('data: ' + data);
+				console.log('Valid?: ' + validUsername);
+
 				return data;
 			})
-			.then(data => console.log(data))
-			.catch(err => console.log(err));
+			.then(data => {
+				console.log(data);
+			})
+			.catch(err => {
+				console.log(err);
+			});
 	};
 
 	return (
@@ -51,13 +74,31 @@ const Main = () => {
 							<Button block type='submit' color='primary'>Submit</Button>
 						</Col>
 					</FormGroup>
+
+					{/*Alert box for wrong username
+						<span class="alert alert-danger">Username doesn't exist.</span>
+						*/}
+						{console.log('valid?: ' + validUsername)}
+					{validUsername ? console.log('valid? true: ' + validUsername) : console.log('valid? false: ' + validUsername)}
+					{console.log('valid?: ' + validUsername)}
+
 				</Form>
+
 				{loading?
+<<<<<<< HEAD
                 <div className="spinner-border" role="status">
                 <span className="sr-only">Loading...</span>
                 </div>:<Visualization data={info}/>}
 				
 				
+=======
+
+                <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+                </div> : <Visualization data={info}/> }
+
+
+>>>>>>> dev
 			</main>
 		</div>
 	);
