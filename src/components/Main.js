@@ -23,6 +23,7 @@ const Main = () => {
 			.then(data => {
 				setLoading(false);
 				setInfo(data);
+				//branch tracking test
 				//checking data status
 				if(data === undefined || data === null) {
 					validUsername = false;
