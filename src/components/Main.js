@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Input, Form, FormGroup, Label,
-	Col, 
+	Col,
 	Button,
 	InputGroup,
 	InputGroupAddon} from 'reactstrap';
@@ -10,24 +10,34 @@ import './main.css';
 const Main = () => {
 	const [username, setUsername] = useState('');
 	const [info, setInfo] = useState(null);
-	const [loading, setLoading]=useState(false);
+	const [loading, setLoading] = useState(false);
+	const [validUsername, setValidUsername] = useState(true);
 
-	const updateUsername = (e) => {
-		setUsername(e.target.value);
-	}
-	const sendUsername = (e) => {	
+	const updateUsername = (e) => setUsername(e.target.value);
+
+	const sendUsername = (e) => {
 		e.preventDefault();
 		setLoading(true);
-		//const check=api.getDetails(username)
-		
 		api.getDetails(username)
 			.then(data => {
-				setLoading(false);
 				setInfo(data);
+
+				//checking data status to determine Username validity
+				if(data === undefined || data === null) {
+					setValidUsername(false);
+				} else {
+					setValidUsername(true);
+				}
+				setLoading(false);
+
 				return data;
 			})
-			.then(data => console.log(data))
-			.catch(err => console.log(err));
+			.then(data => {
+				console.log(data);
+			})
+			.catch(err => {
+				console.log(err);
+			});
 	};
 
 	return (
@@ -50,14 +60,25 @@ const Main = () => {
 						<Col xs={12} md={2} className='mb-1 mb-md-0' >
 							<Button block type='submit' color='primary'>Submit</Button>
 						</Col>
+
+						{/*Alert box for wrong username*/
+							validUsername? "" :
+							<Col xs={12} md={6} className='alert alert-danger offset-3' >
+							<span>Username doesn't exist.</span>
+							</Col>
+							}
 					</FormGroup>
+
+
+
 				</Form>
+
 				{loading?
                 <div className="spinner-border" role="status">
                 <span className="sr-only">Loading...</span>
                 </div>:<Visualization data={info}/>}
-				
-				
+
+
 			</main>
 		</div>
 	);
