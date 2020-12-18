@@ -14,8 +14,6 @@ const Compare =()=>{
     const [info1,setInfo1]=useState('');
     const [info2,setInfo2]=useState('');
     const [isloading,setIsloading]=useState('0');
-    const [positive,setPositive]=useState('green');
-    const [negative,setNegative]=useState('red');
 
     const updateUsername1 =(e)=>setUsername1(e.target.value);
     const updateUsername2 =(e)=>setUsername2(e.target.value);
