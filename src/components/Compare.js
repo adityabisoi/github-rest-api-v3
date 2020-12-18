@@ -5,7 +5,7 @@ import { Input, Form, FormGroup, Label,
 	InputGroup,
 	InputGroupAddon} from 'reactstrap';
 import api from '../services/Github';
-import './main.css';
+import './main/main.css';
 
 const Compare =()=>{
 
