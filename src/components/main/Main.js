@@ -4,8 +4,8 @@ import { Input, Form, FormGroup, Label,
 	Button,
 	InputGroup,
 	InputGroupAddon} from 'reactstrap';
-import api from '../services/Github';
-import Visualization from './Visualization';
+import api from '../../services/Github';
+import Visualization from '../Visualization';
 import './main.css';
 const Main = () => {
 	const [username, setUsername] = useState('');
@@ -45,7 +45,7 @@ const Main = () => {
 			<main className="Main border container-fluid bg-light p-md-5 pt-3 align-items-center">
 				<Form onSubmit={sendUsername}>
 					<FormGroup row>
-						<Label for='username' className='offset-md-1' xs={12} md={1}>
+						<Label data-testid='main-text' for='username' className='offset-md-1' xs={12} md={1}>
 							<span className='float-left float-md-right'>Username: </span>
 						</Label>
 						<Col xs={12} md={8} className='mb-2 mb-md-0'>
