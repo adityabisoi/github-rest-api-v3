@@ -10,4 +10,5 @@ it('renders', () => {
 it('renders text', () => {
     const { getByTestId } = render(<Header />)
     expect(getByTestId('header-text')).toHaveTextContent('GitHub API Playground')
+    //header-text don't have only text now, there's the star&fork badge NavbarBrand too
 })
