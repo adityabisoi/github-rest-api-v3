@@ -7,6 +7,43 @@ const Visualization = (props) => {
 	// 	history.push('/github-rest-api-v3/compare');
 	// }
 	//console.log(props.data)
+
+	//Can handle following and followers because of the same table
+  const hasFollow = (ep, str) => {
+		if(ep === null) {
+			return (<h4 className="m-2 p-2 border-top border-bottom">No {str}</h4>)
+		} else {
+			return(
+				console.log(ep.length),
+        <div>
+				<h4>Total {str}: {ep.length}</h4>
+				<table className="table table-responsive">
+					<thead>
+						<tr>
+							<th>S.No</th>
+							<th>User</th>
+							<th>Name</th>
+						</tr>
+
+					</thead>
+					<tbody>
+						{ep.map((key,index)=>{
+							return(
+								<tr>
+									<td>{index}</td>
+									<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}} alt=""/></td>
+									<td><a href={key.html_url}>{key.login}</a></td>
+								</tr>
+							)
+						})}
+
+					</tbody>
+				</table>
+				</div>
+			)
+		}
+	}
+
 	return(
 		props.data ?
 		<div>
@@ -45,55 +82,8 @@ const Visualization = (props) => {
 
 				</div>
 				<div className="col-sm">
-					<h4>Total Following :{props.data && props.data.following.length}</h4>
-					<table className="table table-responsive">
-						<thead>
-							<tr>
-								<th>S.No</th>
-								<th>User</th>
-								<th>Name</th>
-							</tr>
-
-						</thead>
-						<tbody>
-							{props.data && props.data.following.map((key,index)=>{
-								return(
-									<tr>
-										<td>{index}</td>
-										<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}} alt=""/></td>
-										<td><a href={key.html_url}>{key.login}</a></td>
-									</tr>
-								)
-							})}
-
-						</tbody>
-					</table>
-
-					<h4>Total Followers: {props.data && props.data.followers.length}</h4>
-					<table className="table table-responsive">
-						<thead>
-							<tr>
-								<th>S.No</th>
-								<th>User</th>
-								<th>Name</th>
-							</tr>
-
-						</thead>
-						<tbody>
-							{props.data && props.data.followers.map((key,index)=>{
-								return(
-									<tr>
-										<td>{index}</td>
-										<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}} alt=""/></td>
-										<td><a href={key.html_url}>{key.login}</a></td>
-									</tr>
-								)
-							})}
-
-						</tbody>
-					</table>
-
-
+					{hasFollow(props.data.following, "Following")}
+					{hasFollow(props.data.followers, "Followers")}
 				</div>
 
 			</div>
