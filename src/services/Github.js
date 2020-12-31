@@ -16,15 +16,26 @@ const endpoints = [
 	'gists',
 	'followers',
 	'following',
-	'starred'
+	'starred',
+  'profile'
 ];
 
 // Get a page from a particular endpoint
 const getEndpoint = async (username, endpoint, pageNumber = 1, perPage = PER_PAGE) => {
 	// URL for the API endpoint
-	const url = `${API_URL}/users/${username}/${endpoint}?per_page=${perPage}&page=${pageNumber}`;
-	const resp = await axios.get(url);
-	return resp.data.length > 0 ? resp.data : null;
+  if(endpoint === 'profile') {
+    const url = `${API_URL}/users/${username}`;
+  	const resp = await axios.get(url);
+    //Putting data into an array because getDetails need arrays
+    const respArr = [resp.data];
+  	return respArr.length > 0 ? respArr : null;
+  } else {
+    const url = `${API_URL}/users/${username}/${endpoint}?per_page=${perPage}&page=${pageNumber}`;
+  	const resp = await axios.get(url);
+  	return resp.data.length > 0 ? resp.data : null;
+  }
+
+
 };
 
 // Get the data object for a user
@@ -62,7 +73,7 @@ const getDetails = async (username, getAll = false) => {
 				break;
 			endpointPages[ep]++;
 		}
-		
+
 		return [ep, arr];
 	}));
 

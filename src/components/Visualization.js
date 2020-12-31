@@ -10,8 +10,8 @@ const Visualization = (props) => {
 	return(
 		props.data ?
 		<div>
-			<img src={props.data.profile.avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>
-			<h2>{props.data && props.data.profile.name}</h2>
+			<img src={props.data.profile[0].avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>
+			<h2>{props.data && props.data.profile[0].name}</h2>
 			<div className="row">
 				<div className="col-sm">
 					<h4>Total Repos: {props.data && props.data.repos.length}</h4>
