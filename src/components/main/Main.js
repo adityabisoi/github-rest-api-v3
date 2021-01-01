@@ -21,15 +21,7 @@ const Main = () => {
 		api.getDetails(username)
 			.then(data => {
 				setInfo(data);
-
-				//checking data status to determine Username validity
-				if(data === undefined || data === null) {
-					setValidUsername(false);
-				} else {
-					setValidUsername(true);
-				}
 				setLoading(false);
-
 				return data;
 			})
 			.then(data => {
@@ -37,6 +29,12 @@ const Main = () => {
 			})
 			.catch(err => {
 				console.log(err);
+				if(err.response.status === 403) {
+					console.log('Rate limit exceeded');
+				} else if (err.response.status === 404) {
+					setValidUsername(false);
+					setLoading(false);
+				}
 			});
 	};
 
@@ -63,7 +61,7 @@ const Main = () => {
 
 						{/*Alert box for wrong username*/
 							validUsername? "" :
-							<Col xs={12} md={6} className='alert alert-danger offset-3' >
+							<Col xs={8} md={6} className='alert alert-danger offset-md-3 offset-2' >
 							<span>Username doesn't exist.</span>
 							</Col>
 							}

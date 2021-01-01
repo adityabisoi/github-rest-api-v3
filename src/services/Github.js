@@ -12,17 +12,18 @@ const API_URL = 'https://api.github.com';
 
 // All endpoints
 const endpoints = [
+	'profile',
 	'repos',
 	'gists',
 	'followers',
 	'following',
-	'starred',
-  'profile'
+	'starred'
 ];
 
 // Get a page from a particular endpoint
 const getEndpoint = async (username, endpoint, pageNumber = 1, perPage = PER_PAGE) => {
 	// URL for the API endpoint
+	// https://api.github.com/rate_limit to monitor your rate
   if(endpoint === 'profile') {
     const url = `${API_URL}/users/${username}`;
   	const resp = await axios.get(url);
