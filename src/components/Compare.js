@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Input, Form, FormGroup, Label,
-	Col, 
+	Col,
 	Button,
 	InputGroup,
 	InputGroupAddon} from 'reactstrap';
@@ -22,13 +22,13 @@ const Compare =()=>{
 
     const getData = (e) =>{
         setIsloading('1');
-        
+
         e.preventDefault();
         console.log("isloading",isloading);
         api.getDetails(username1)
 			.then(data => {
-                
-                setInfo1(data);
+
+                setInfo1(nullToEmptyArr(data));
                 setIsloading('0');
 				return data;
 			})
@@ -36,7 +36,7 @@ const Compare =()=>{
             .catch(err => console.log(err));
         api.getDetails(username2)
 			.then(data => {
-				setInfo2(data);
+				setInfo2(nullToEmptyArr(data));
 				return data;
 			})
 			.then(data => console.log("data2",data))
@@ -44,8 +44,17 @@ const Compare =()=>{
 
     }
 
+    // Because Compare.js is working with arr only (No null var)
+		const nullToEmptyArr = (data) => {
+			for (const prop in data) {
+				if (data[prop] === null) {
+					data[prop] = []
+				}
+			}
+			return data
+		}
+
     return(
-        
         <div className="main" style={{background:"#fff",boxShadow:"1px solid #333",margin:"20pt",padding:"20pt"}}>
             <div className="form">
             <Form onSubmit={getData} >
@@ -79,6 +88,7 @@ const Compare =()=>{
 						</Col>
 					</FormGroup>
 				</Form>
+
                 {isloading==='1'?
                 <div className="d-flex justify-content-center">
                     <div className="spinner-border" role="status">
@@ -86,15 +96,15 @@ const Compare =()=>{
                     </div>
                 </div>
                 :
-                
+
                 info1 && info2 ?
                 <div className="comparisonTable" style={{textAlign:"center"}}>
                     <table className="table table-hover " style={{textAlign:"left"}}>
                         <thead>
                             <tr>
                                 <th>Feature :</th>
-                                <th>{username1}</th>
-                                <th>{username2}</th>
+                                <th>{info1.username}</th>
+                                <th>{info2.username}</th>
                             </tr>
 
                         </thead>
@@ -102,13 +112,13 @@ const Compare =()=>{
                                 {info1.followers.length-info2.followers.length>0
                                 ?
                                 <tr>
-                                    <td>Followers</td> 
+                                    <td>Followers</td>
                                     <td>{info1.followers.length} <span className="text-success">&emsp;+{Math.abs(info1.followers.length-info2.followers.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.followers.length}</td>
                                 </tr>
                                 :
                                 <tr>
-                                    <td>Followers</td> 
+                                    <td>Followers</td>
                                     <td>{info1.followers.length}</td>
                                     <td>{info2.followers.length} <span className="text-success">&emsp;+{Math.abs(info1.followers.length-info2.followers.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                 </tr>
@@ -116,13 +126,13 @@ const Compare =()=>{
                                 {info1.following.length-info2.following.length>0
                                 ?
                                 <tr>
-                                    <td>Following</td> 
+                                    <td>Following</td>
                                     <td>{info1.following.length} <span className="text-success">&emsp;+{Math.abs(info1.following.length-info2.following.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.following.length}</td>
                                 </tr>
                                 :
                                 <tr>
-                                    <td>Following</td> 
+                                    <td>Following</td>
                                     <td>{info1.following.length}</td>
                                     <td>{info2.following.length} <span className="text-success">&emsp;+{Math.abs(info1.following.length-info2.following.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                 </tr>
@@ -130,13 +140,13 @@ const Compare =()=>{
                                 {info1.gists.length-info2.gists.length>0
                                 ?
                                 <tr>
-                                    <td>Gists</td> 
+                                    <td>Gists</td>
                                     <td>{info1.gists.length} <span className="text-success">&emsp;+{Math.abs(info1.gists.length-info2.gists.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.gists.length}</td>
                                 </tr>
                                 :
                                 <tr>
-                                    <td>Gists</td> 
+                                    <td>Gists</td>
                                     <td>{info1.gists.length}</td>
                                     <td>{info2.gists.length} <span className="text-success">&emsp;+{Math.abs(info1.gists.length-info2.gists.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                 </tr>
@@ -144,13 +154,13 @@ const Compare =()=>{
                                 {info1.repos.length-info2.repos.length>0
                                 ?
                                 <tr>
-                                    <td>Repositories</td> 
+                                    <td>Repositories</td>
                                     <td>{info1.repos.length} <span className="text-success">&emsp;+{Math.abs(info1.repos.length-info2.repos.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.repos.length}</td>
                                 </tr>
                                 :
                                 <tr>
-                                    <td>Repositories</td> 
+                                    <td>Repositories</td>
                                     <td>{info1.repos.length}</td>
                                     <td>{info2.repos.length} <span className="text-success">&emsp;+{Math.abs(info1.repos.length-info2.repos.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                 </tr>
@@ -158,31 +168,30 @@ const Compare =()=>{
                                 {info1.starred.length-info2.starred.length>0
                                 ?
                                 <tr>
-                                    <td>Starred</td> 
+                                    <td>Starred</td>
                                     <td>{info1.starred.length} <span className="text-success">&emsp;+{Math.abs(info1.starred.length-info2.starred.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                     <td>{info2.starred.length}</td>
                                 </tr>
                                 :
                                 <tr>
-                                    <td>Starred</td> 
+                                    <td>Starred</td>
                                     <td>{info1.starred.length}</td>
                                     <td>{info2.starred.length} <span className="text-success">&emsp;+{Math.abs(info1.starred.length-info2.starred.length)}<i style={{fontSize:"2em"}}>&uarr;</i></span></td>
                                 </tr>
                                 }
 
-                                
-                            
+
+
 
                         </tbody>
                     </table>
 
                 </div>
-                :""               
+                :""
                 }
             </div>
         </div>
-
-    );
+);
 
 };
 export default Compare;
