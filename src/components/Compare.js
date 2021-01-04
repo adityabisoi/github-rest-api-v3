@@ -113,7 +113,7 @@ const Compare =()=>{
                                 ?
                                 <tr>
                                     <td>Followers</td>
-                                    <td>{info1.followers.length} <span className="text-success">&emsp;+test{Math.abs(info1.followers.length-info2.followers.length)}<i>&uarr;</i></span></td>
+                                    <td>{info1.followers.length} <span className="text-success">&emsp;+{Math.abs(info1.followers.length-info2.followers.length)}<i>&uarr;</i></span></td>
                                     <td>{info2.followers.length}</td>
                                 </tr>
                                 :
