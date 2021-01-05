@@ -34,10 +34,7 @@ This repo holds the code for the GitHub REST API playground. The App is hosted l
 * [How to use it?](CONTRIBUTING.md)
 * [Don't feel you aren't smart enough!](Code-of-Conduct.md)
 * [Ask for a Help](https://gitter.im/github-rest-api-v3/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 <br>
-<br>
-
 
 ## ✔ Installation 
 * Fork and clone the project to your local machine
