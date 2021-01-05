@@ -24,7 +24,9 @@ This repo holds the code for the GitHub REST API playground. The App is hosted l
 ![GitHub stars](https://img.shields.io/github/stars/adityabisoi/github-rest-api-v3)
 ![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fadityabisoi%2Fgithub-rest-api-v3)
 <br>
+
 <br>
+
 
 
 ## 📌 Table of Contents 📌
@@ -87,4 +89,7 @@ This project is a part of NJHACK. For more details, you can check out [this link
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/System-Glitch/System-Glitch/master/assets/img/png/footer.png" width="100%"/>
-</div>
+
+</div></div>
+=======
+
