@@ -17,7 +17,6 @@ This repo holds the code for the GitHub REST API playground. The App is hosted l
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/adityabisoi/github-rest-api-v3.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adityabisoi/github-rest-api-v3/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/adityabisoi/github-rest-api-v3.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adityabisoi/github-rest-api-v3/context:javascript)
 ![GitHub contributors](https://img.shields.io/github/contributors/adityabisoi/github-rest-api-v3)
-![David](https://img.shields.io/david/dev/adityabisoi/github-rest-api-v3?style=plastic)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/adityabisoi/github-rest-api-v3)
 ![GitHub issues](https://img.shields.io/github/issues/adityabisoi/github-rest-api-v3)
 ![GitHub forks](https://img.shields.io/github/forks/adityabisoi/github-rest-api-v3)
@@ -32,16 +31,11 @@ This repo holds the code for the GitHub REST API playground. The App is hosted l
 ## 📌 Table of Contents 📌
 * [What is it?](https://bit.ly/3kRkM2e)
 * [Why use it?](https://njackwinterofcode.github.io/)
-* How to use it?
-* [Don't feel you aren't smart enough!](CONTRIBUTING.md)
-* About Video Resources
+* [How to use it?](CONTRIBUTING.md)
+* [Don't feel you aren't smart enough!](Code-of-Conduct.md)
+* [Ask for a Help](https://gitter.im/github-rest-api-v3/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 <br>
-<div align="center">
-    <img src="https://raw.githubusercontent.com/System-Glitch/System-Glitch/master/assets/img/png/separator.png" width="100%"/>
-</div>
-
-<div align="center">
 <br>
 
 
@@ -91,5 +85,5 @@ This project is a part of NJHACK. For more details, you can check out [this link
     <img src="https://raw.githubusercontent.com/System-Glitch/System-Glitch/master/assets/img/png/footer.png" width="100%"/>
 
 </div></div>
-=======
+
 
