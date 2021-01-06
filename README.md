@@ -1,4 +1,3 @@
-
 <div align="center">
     <img src="https://raw.githubusercontent.com/System-Glitch/System-Glitch/master/assets/img/png/separator.png" width="100%"/>
 </div>
@@ -28,50 +27,55 @@ This repo holds the code for the GitHub REST API playground. The App is hosted l
 
 
 
+
 ## 📌 Table of Contents 📌
-* [What is it?](https://bit.ly/3kRkM2e)
-* [Why use it?](https://njackwinterofcode.github.io/)
-* [How to use it?](CONTRIBUTING.md)
-* [Don't feel you aren't smart enough!](Code-of-Conduct.md)
-* [Ask for a Help](https://gitter.im/github-rest-api-v3/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+* <a data-scroll href="#Go-to-installation">Installation</a>
+* <a data-scroll href="#Go-to-linting">Linting</a>
+* <a data-scroll href="Go-to-documentation">Documentation</a>
+* <a data-scroll href="Go-to-COC">Code of Conduct</a>
+* <a data-scroll href="Go-to-contributing">Contributing</a>
+* <a data-scroll href="Go-to-support">Support</a>
+* <a data-scroll href="Go-to-Opensource">Open Source Events</a>
 <br>
 
-## ✔ Installation 
+<h2 id="Go-to-installation">✔ Installation</h2>
+
 * Fork and clone the project to your local machine
 * Move to the cloned repo's location `cd github-rest-api-v3/`
 * Run `npm install` to install ReactJS dependencies
 * Run `npm start` to run the project
 
+
 <br>
 
-## 🎗 Linting
+<h2 id="Go-to-linting">🎗 Linting</h2> 
 * To fix all linting errors, simply run `npm run lint -- --fix`
 
 <br>
 
-## 📝 Documentation 
+<h2 id="Go-to-documentation">📝 Documentation</h2> 
 You can refer to the documentation [here](https://bit.ly/3kRkM2e)
 
 <br>
 
-##  💼  Code of Conduct
+<h2 id="Go-to-COC">💼  Code of Conduct</h2>
 We want to facilitate a healthy and constructive community behavior by adopting and enforcing our code of conduct.
 Please adhere toward our [Code-of-Conduct](Code-of-Conduct.md).
 
 <br>
 
-## 🏆 Contributing 
+<h2 id="Go-to-contributing">🏆 Contributing</h2> 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the repository (github-rest-api-v3)
 
 <br>
 
-## 🙌 Support
+<h2 id="Go-to-support">🙌 Support</h2>
 <a href="https://gitter.im/github-rest-api-v3/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" rel="some text">![Foo](https://icon-icons.com/icons2/2530/PNG/72/gitter_button_icon_151850.png
 )</a>
 
 <br>
 
-## ❤ Open Source Events
+<h2 id="Go-to-Opensource">❤ Open Source Events</h2>
 This project is a part of NJHACK. For more details, you can check out [this link](https://njackwinterofcode.github.io/)
 <br>
 
