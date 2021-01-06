@@ -70,6 +70,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the reposi
 <br>
 
 <h2 id="Go-to-support">🙌 Support</h2>
+
 <a href="https://gitter.im/github-rest-api-v3/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" rel="some text">![Foo](https://icon-icons.com/icons2/2530/PNG/72/gitter_button_icon_151850.png
 )</a>
 
