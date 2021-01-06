@@ -40,36 +40,51 @@ This repo holds the code for the GitHub REST API playground. The App is hosted l
 
 <h2 id="Go-to-installation">✔ Installation</h2>
 
+<br>
+
 * Fork and clone the project to your local machine
 * Move to the cloned repo's location `cd github-rest-api-v3/`
 * Run `npm install` to install ReactJS dependencies
 * Run `npm start` to run the project
 
-
 <br>
 
 <h2 id="Go-to-linting">🎗 Linting</h2> 
+
+<br>
+
 * To fix all linting errors, simply run `npm run lint -- --fix`
 
 <br>
 
 <h2 id="Go-to-documentation">📝 Documentation</h2> 
+
+<br>
+
 You can refer to the documentation [here](https://bit.ly/3kRkM2e)
 
 <br>
 
 <h2 id="Go-to-COC">💼  Code of Conduct</h2>
+
+<br>
+
 We want to facilitate a healthy and constructive community behavior by adopting and enforcing our code of conduct.
 Please adhere toward our [Code-of-Conduct](Code-of-Conduct.md).
 
 <br>
 
 <h2 id="Go-to-contributing">🏆 Contributing</h2> 
+
+<br>
+
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the repository (github-rest-api-v3)
 
 <br>
 
 <h2 id="Go-to-support">🙌 Support</h2>
+
+<br>
 
 <a href="https://gitter.im/github-rest-api-v3/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" rel="some text">![Foo](https://icon-icons.com/icons2/2530/PNG/72/gitter_button_icon_151850.png
 )</a>
@@ -77,11 +92,15 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing to the reposi
 <br>
 
 <h2 id="Go-to-Opensource">❤ Open Source Events</h2>
-This project is a part of NJHACK. For more details, you can check out [this link](https://njackwinterofcode.github.io/)
+
+<br>
+
+This project is a part of NJHACK. For more details, you can check out  [this link](https://njackwinterofcode.github.io/)
+
 <br>
 
 <p align = "center"><img src = "https://user-images.githubusercontent.com/42573842/101052659-eb1b1600-35ac-11eb-9a80-cfaa33a29b04.png" alt = "NJHACK Logo" height=200px></p>
-
+<br>
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/System-Glitch/System-Glitch/master/assets/img/png/footer.png" width="100%"/>
