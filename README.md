@@ -31,11 +31,11 @@ This repo holds the code for the GitHub REST API playground. The App is hosted l
 ## 📌 Table of Contents 📌
 * <a data-scroll href="#Go-to-installation">Installation</a>
 * <a data-scroll href="#Go-to-linting">Linting</a>
-* <a data-scroll href="Go-to-documentation">Documentation</a>
-* <a data-scroll href="Go-to-COC">Code of Conduct</a>
-* <a data-scroll href="Go-to-contributing">Contributing</a>
-* <a data-scroll href="Go-to-support">Support</a>
-* <a data-scroll href="Go-to-Opensource">Open Source Events</a>
+* <a data-scroll href="#Go-to-documentation">Documentation</a>
+* <a data-scroll href="#Go-to-COC">Code of Conduct</a>
+* <a data-scroll href="#Go-to-contributing">Contributing</a>
+* <a data-scroll href="#Go-to-support">Support</a>
+* <a data-scroll href="#Go-to-Opensource">Open Source Events</a>
 <br>
 
 <h2 id="Go-to-installation">✔ Installation</h2>
