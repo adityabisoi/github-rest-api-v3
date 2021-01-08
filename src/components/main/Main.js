@@ -21,6 +21,7 @@ const Main = () => {
 		api.getDetails(username)
 			.then(data => {
 				setInfo(data);
+				setValidUsername(true);
 				setLoading(false);
 				return data;
 			})
@@ -51,32 +52,31 @@ const Main = () => {
 								<InputGroupAddon addonType='prepend'>
 									<Button className='bg-light text-dark font-weight-bold border'>@</Button>
 								</InputGroupAddon>
-								<Input type='text' required
-									value={username} onChange={updateUsername}/>
+								{
+									validUsername?
+										<Input type='text' required value={username} onChange={updateUsername}/> :
+										<Input type='text' className="form-control is-invalid" required value={username} onChange={updateUsername}/>
+								}
 							</InputGroup>
 						</Col>
 						<Col xs={12} md={2} className='mb-1 mb-md-0' >
 							<Button block type='submit' color='primary'>Submit</Button>
 						</Col>
-
 						{/*Alert box for wrong username*/
 							validUsername? "" :
 							<Col xs={8} md={6} className='alert alert-danger offset-md-3 offset-2' >
-							<span>Username doesn't exist.</span>
+								<span>Username doesn't exist.</span>
 							</Col>
-							}
+						}
 					</FormGroup>
-
-
-
 				</Form>
-
-				{loading?
-                <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
-                </div>:<Visualization data={info}/>}
-
-
+				{
+					loading?
+						<div className="spinner-border" role="status">
+							<span className="sr-only">Loading...</span>
+						</div> :
+						<Visualization data={info}/>
+				}
 			</main>
 		</div>
 	);
