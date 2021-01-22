@@ -18,7 +18,6 @@ https://docs.github.com/en/github/authenticating-to-github
 const TOKEN = process.env.REACT_APP_API_TOKEN
 let headers = null
 if(TOKEN.length === 40) {
-  console.log('here')
   headers = {
     headers: {
       Authorization: 'token ' + TOKEN
