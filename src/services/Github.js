@@ -10,6 +10,23 @@ const TOO_MANY_PAGES = 3;
 const PER_PAGE = 100;
 const API_URL = 'https://api.github.com';
 
+/** Basic headers check, allow adding github personal access token
+(from .env) to unlock more features
+https://docs.github.com/en/github/authenticating-to-github
+/creating-a-personal-access-token
+*/
+const TOKEN = process.env.REACT_APP_API_TOKEN
+let headers = null
+if(TOKEN.length === 40) {
+  headers = {
+    headers: {
+      Authorization: 'token ' + TOKEN
+    }
+  }
+} else {
+  console.log('Wrong or missing token')
+}
+
 // All endpoints
 const endpoints = [
 	'profile',
@@ -23,19 +40,21 @@ const endpoints = [
 // Get a page from a particular endpoint
 const getEndpoint = async (username, endpoint, pageNumber = 1, perPage = PER_PAGE) => {
 	// URL for the API endpoint
-	// https://api.github.com/rate_limit to monitor your rate
   if(endpoint === 'profile') {
     const url = `${API_URL}/users/${username}`;
-  	const resp = await axios.get(url);
-    //Putting data into an array because getDetails need arrays
+  	const resp = await axios.get(url, headers);
+    // headers where you'll find your rate limit
+    // console.log(resp.headers)
+    //Putting data into an array because getDetails needs arrays
     const respArr = [resp.data];
   	return respArr.length > 0 ? respArr : null;
   } else {
     const url = `${API_URL}/users/${username}/${endpoint}?per_page=${perPage}&page=${pageNumber}`;
-  	const resp = await axios.get(url);
+  	const resp = await axios.get(url, headers);
+    // headers where you'll find your rate limit
+    // console.log(resp.headers)
   	return resp.data.length > 0 ? resp.data : null;
   }
-
 
 };
 
