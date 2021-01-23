@@ -1,5 +1,5 @@
 // import {useHistory } from 'react-router-dom';
-
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const Visualization = (props) => {
 	// const history=useHistory();
@@ -86,6 +86,27 @@ const Visualization = (props) => {
 		<div>
 			<img src={props.data.profile[0].avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>
 			<h2>{props.data && props.data.profile[0].name}</h2>
+      <Form inline className="">
+        <FormGroup check inline>
+          <Label check>
+            <Input type="checkbox" />{' '}
+            Repos
+          </Label>
+        </FormGroup>
+        <FormGroup check inline>
+          <Label check>
+            <Input type="checkbox" />{' '}
+            Following
+          </Label>
+        </FormGroup>
+        <FormGroup check inline>
+          <Label check>
+            <Input type="checkbox" />{' '}
+            Followers
+          </Label>
+        </FormGroup>
+        <Button>Filter</Button>
+      </Form>
 			<div className="row">
 				<div className="col-sm">
           {hasRepos(props.data.repos)}
