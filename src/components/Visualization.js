@@ -1,5 +1,6 @@
 // import {useHistory } from 'react-router-dom';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, CustomInput } from 'reactstrap';
+import { useState } from 'react';
 
 const Visualization = (props) => {
 	// const history=useHistory();
@@ -7,6 +8,11 @@ const Visualization = (props) => {
 	// 	history.push('/github-rest-api-v3/compare');
 	// }
 	//console.log(props.data)
+  const [filterState, setFilterState] = useState({
+    repos: true,
+    following: true,
+    followers: true,
+  })
 
 	//Can handle following and followers because of the same table
   const hasFollow = (ep, str) => {
@@ -15,26 +21,26 @@ const Visualization = (props) => {
 		} else {
 			return(
         <div>
-				<h4>Total {str}: {ep.length}</h4>
-				<table className="table table-responsive">
-					<thead>
-						<tr>
-							<th>S.No</th>
-							<th>User</th>
-							<th>Name</th>
-						</tr>
+          <h4>Total {str}: {ep.length}</h4>
+          <table className="table table-responsive">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>User</th>
+                <th>Name</th>
+              </tr>
 
-					</thead>
-					<tbody>
-						{ep.map((key,index)=>{
-							return(
-								<tr>
-									<td>{index}</td>
-									<td><img src={key.avatar_url} style={{width:"40px",height:"40px"}} alt=""/></td>
-									<td><a href={key.html_url}>{key.login}</a></td>
-								</tr>
-							)
-						})}
+            </thead>
+            <tbody>
+              {ep.map((key,index)=>{
+                return(
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td><img src={key.avatar_url} style={{width:"40px",height:"40px"}} alt=""/></td>
+                    <td><a href={key.html_url}>{key.login}</a></td>
+                  </tr>
+                )
+              })}
 
 					</tbody>
 				</table>
@@ -66,7 +72,7 @@ const Visualization = (props) => {
               {props.data && props.data.repos.map((key,index)=>{
 
                 return(<tr>
-                  <td>{index}</td>
+                  <td>{index + 1}</td>
                   <td><a href={key.html_url}>{key.name}</a></td>
                   <td><a href={key.html_url+'/issues'}>{key.open_issues_count}</a></td>
                   <td>{key.stargazers_count}</td>
@@ -87,25 +93,54 @@ const Visualization = (props) => {
 			<img src={props.data.profile[0].avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>
 			<h2>{props.data && props.data.profile[0].name}</h2>
       <Form inline className="">
-        <FormGroup check inline>
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Repos
-          </Label>
+        <FormGroup className="" check inline>
+          <CustomInput
+            id="reposCheck"
+            type="switch"
+            label="Repos"
+            onChange={(e) => {
+              setFilterState((prevState) => ({
+                ...prevState,
+                repos: e.target.checked
+              }))
+              console.log(filterState)
+              console.log(e.target.checked)
+            }}
+            defaultChecked
+          />
         </FormGroup>
         <FormGroup check inline>
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Following
-          </Label>
+          <CustomInput
+            id="followingCheck"
+            type="switch"
+            label="Following"
+            onChange={(e) => {
+              setFilterState((prevState) => ({
+                ...prevState,
+                following: e.target.checked
+              }))
+              console.log(filterState)
+              console.log(e.target.checked)
+            }}
+            defaultChecked
+          />
         </FormGroup>
         <FormGroup check inline>
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Followers
-          </Label>
+          <CustomInput
+            id="followersCheck"
+            type="switch"
+            label="Followers"
+            onChange={(e) => {
+              setFilterState((prevState) => ({
+                ...prevState,
+                followers: e.target.checked
+              }))
+              console.log(filterState)
+              console.log(e.target.checked)
+            }}
+            defaultChecked
+          />
         </FormGroup>
-        <Button>Filter</Button>
       </Form>
 			<div className="row">
 				<div className="col-sm">
