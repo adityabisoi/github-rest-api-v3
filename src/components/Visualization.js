@@ -13,6 +13,31 @@ const Visualization = (props) => {
     following: true,
     followers: true,
   })
+  const toggleCheckbox = (e) => {
+    switch(e.target.id) {
+      case 'reposCheck':
+      setFilterState((prevState) => ({
+        ...prevState,
+        repos: e.target.checked
+      }))
+      break
+      
+      case 'followingCheck':
+      setFilterState((prevState) => ({
+        ...prevState,
+        following: e.target.checked
+      }))
+      break
+      
+      case 'followersCheck':
+      setFilterState((prevState) => ({
+        ...prevState,
+        followers: e.target.checked
+      }))
+      break
+      default:
+    }
+  }
 
 	//Can handle following and followers because of the same table
   const hasFollow = (ep, str) => {
@@ -92,61 +117,50 @@ const Visualization = (props) => {
 		<div>
 			<img src={props.data.profile[0].avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>
 			<h2>{props.data && props.data.profile[0].name}</h2>
-      <Form inline className="">
-        <FormGroup className="" check inline>
-          <CustomInput
-            id="reposCheck"
-            type="switch"
-            label="Repos"
-            onChange={(e) => {
-              setFilterState((prevState) => ({
-                ...prevState,
-                repos: e.target.checked
-              }))
-              console.log(filterState)
-              console.log(e.target.checked)
-            }}
-            defaultChecked
-          />
-        </FormGroup>
-        <FormGroup check inline>
-          <CustomInput
-            id="followingCheck"
-            type="switch"
-            label="Following"
-            onChange={(e) => {
-              setFilterState((prevState) => ({
-                ...prevState,
-                following: e.target.checked
-              }))
-              console.log(filterState)
-              console.log(e.target.checked)
-            }}
-            defaultChecked
-          />
-        </FormGroup>
-        <FormGroup check inline>
-          <CustomInput
-            id="followersCheck"
-            type="switch"
-            label="Followers"
-            onChange={(e) => {
-              setFilterState((prevState) => ({
-                ...prevState,
-                followers: e.target.checked
-              }))
-              console.log(filterState)
-              console.log(e.target.checked)
-            }}
-            defaultChecked
-          />
-        </FormGroup>
-      </Form>
-			<div className="row">
-				<div className="col-sm">
+      {filterState.repos? <h2>Repos True</h2>:<h2>Repos False</h2>}
+      {filterState.following? <h2>Following True</h2>:<h2>Following False</h2>}
+      {filterState.followers? <h2>Followers True</h2>:<h2>Followers False</h2>}
+
+			<div className="row justify-content-center">
+        <Form className="col-sm-12">
+          <FormGroup className="" check inline>
+            <CustomInput
+              id="reposCheck"
+              type="switch"
+              label="Repos"
+              onChange={(e) => {
+                toggleCheckbox(e)
+              }}
+              defaultChecked
+            />
+          </FormGroup>
+          <FormGroup check inline>
+            <CustomInput
+              id="followingCheck"
+              type="switch"
+              label="Following"
+              onChange={(e) => {
+                toggleCheckbox(e)
+              }}
+              defaultChecked
+            />
+          </FormGroup>
+          <FormGroup check inline>
+            <CustomInput
+              id="followersCheck"
+              type="switch"
+              label="Followers"
+              onChange={(e) => {
+                toggleCheckbox(e)
+              }}
+              defaultChecked
+            />
+          </FormGroup>
+        </Form>
+				<div className="col-sm-auto">
           {hasRepos(props.data.repos)}
-				</div>
-				<div className="col-sm">
+        </div>
+				<div className="col-sm-auto">
 					{hasFollow(props.data.following, "Following")}
 					{hasFollow(props.data.followers, "Followers")}
 				</div>
