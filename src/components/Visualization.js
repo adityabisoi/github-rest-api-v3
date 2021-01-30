@@ -21,14 +21,12 @@ const Visualization = (props) => {
         repos: e.target.checked
       }))
       break
-      
       case 'followingCheck':
       setFilterState((prevState) => ({
         ...prevState,
         following: e.target.checked
       }))
       break
-      
       case 'followersCheck':
       setFilterState((prevState) => ({
         ...prevState,
@@ -38,15 +36,15 @@ const Visualization = (props) => {
       default:
     }
   }
-
+  
 	//Can handle following and followers because of the same table
   const hasFollow = (ep, str) => {
 		if(ep === null) {
-			return (<h4 className="m-2 p-2 border-top border-bottom">No {str}</h4>)
+			return (<h4 className="m-0 p-2 border-top border-bottom">No {str}</h4>)
 		} else {
 			return(
         <div>
-          <h4>Total {str}: {ep.length}</h4>
+          <h4 className="m-0 p-2">Total {str}: {ep.length}</h4>
           <table className="table table-responsive">
             <thead>
               <tr>
@@ -54,7 +52,6 @@ const Visualization = (props) => {
                 <th>User</th>
                 <th>Name</th>
               </tr>
-
             </thead>
             <tbody>
               {ep.map((key,index)=>{
@@ -66,7 +63,6 @@ const Visualization = (props) => {
                   </tr>
                 )
               })}
-
 					</tbody>
 				</table>
 				</div>
@@ -76,11 +72,11 @@ const Visualization = (props) => {
 
   const hasRepos = (ep) => {
     if(ep === null)
-    return(<h4 className="m-2 p-2 border-top border-bottom">No Repos</h4>)
+    return(<h4 className="m-0 p-2 border-top border-bottom">No Repos</h4>)
     else {
       return(
         <div>
-          <h4>Total Repos: {props.data && props.data.repos.length}</h4>
+          <h4 className="m-0 p-2">Total Repos: {props.data && props.data.repos.length}</h4>
           <table className="table table-responsive">
             <thead>
               <tr>
@@ -90,8 +86,6 @@ const Visualization = (props) => {
                 <th>Stars</th>
                 <th>Forks</th>
               </tr>
-
-
             </thead>
             <tbody>
               {props.data && props.data.repos.map((key,index)=>{
@@ -117,13 +111,9 @@ const Visualization = (props) => {
 		<div>
 			<img src={props.data.profile[0].avatar_url} style={{width:"100px",height:"100px",borderRadius:"50%"}} alt=""/>
 			<h2>{props.data && props.data.profile[0].name}</h2>
-      {filterState.repos? <h2>Repos True</h2>:<h2>Repos False</h2>}
-      {filterState.following? <h2>Following True</h2>:<h2>Following False</h2>}
-      {filterState.followers? <h2>Followers True</h2>:<h2>Followers False</h2>}
-
 			<div className="row justify-content-center">
-        <Form className="col-sm-12">
-          <FormGroup className="" check inline>
+        <Form className="col-sm-12 mt-2 mb-2">
+          <FormGroup check inline>
             <CustomInput
               id="reposCheck"
               type="switch"
@@ -157,12 +147,18 @@ const Visualization = (props) => {
             />
           </FormGroup>
         </Form>
+        {filterState.repos?
+          <div className="col-sm-auto">
+            {hasRepos(props.data.repos)}
+          </div>
+        : ''}
 				<div className="col-sm-auto">
-          {hasRepos(props.data.repos)}
-        </div>
-				<div className="col-sm-auto">
-					{hasFollow(props.data.following, "Following")}
-					{hasFollow(props.data.followers, "Followers")}
+					{filterState.following?
+            hasFollow(props.data.following, "Following")
+          : ''}
+          {filterState.followers?
+            hasFollow(props.data.followers, "Followers")
+          : ''}
 				</div>
 			</div>
 		</div>
