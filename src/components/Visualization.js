@@ -3,16 +3,13 @@ import { Form, FormGroup, CustomInput } from 'reactstrap';
 import { useState } from 'react';
 
 const Visualization = (props) => {
-	// const history=useHistory();
-	// const handleClick=()=>{
-	// 	history.push('/github-rest-api-v3/compare');
-	// }
-	//console.log(props.data)
+  
   const [filterState, setFilterState] = useState({
     repos: true,
     following: true,
     followers: true,
   })
+  
   const toggleCheckbox = (e) => {
     switch(e.target.id) {
       case 'reposCheck':
@@ -114,6 +111,7 @@ const Visualization = (props) => {
 			<div className="row justify-content-center">
         <Form className="col-sm-12 mt-2 mb-2">
           <FormGroup check inline>
+          
             <CustomInput
               id="reposCheck"
               type="switch"
@@ -123,8 +121,10 @@ const Visualization = (props) => {
               }}
               defaultChecked
             />
+            
           </FormGroup>
           <FormGroup check inline>
+          
             <CustomInput
               id="followingCheck"
               type="switch"
@@ -134,8 +134,10 @@ const Visualization = (props) => {
               }}
               defaultChecked
             />
+            
           </FormGroup>
           <FormGroup check inline>
+          
             <CustomInput
               id="followersCheck"
               type="switch"
@@ -145,21 +147,26 @@ const Visualization = (props) => {
               }}
               defaultChecked
             />
+            
           </FormGroup>
         </Form>
+        
         {filterState.repos?
           <div className="col-sm-auto">
             {hasRepos(props.data.repos)}
           </div>
         : ''}
+        
 				<div className="col-sm-auto">
 					{filterState.following?
             hasFollow(props.data.following, "Following")
           : ''}
+          
           {filterState.followers?
             hasFollow(props.data.followers, "Followers")
           : ''}
 				</div>
+        
 			</div>
 		</div>
 		:
