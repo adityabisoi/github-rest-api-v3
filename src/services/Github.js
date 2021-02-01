@@ -10,8 +10,22 @@ const TOO_MANY_PAGES = 3;
 const PER_PAGE = 100;
 const API_URL = 'https://api.github.com';
 
-///Request headers for the authorisation app
+/** Basic headers check, allow adding github personal access token
+(from .env) to unlock more features
+https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
+*/
 let headers = null
+
+/*const TOKEN = process.env.REACT_APP_API_TOKEN
+if(TOKEN.length === 40) {
+  headers = {
+    headers: {
+      Authorization: 'token ' + TOKEN
+    }
+  }
+} else {
+  console.log('Wrong or missing token')
+}*/
 
 // All endpoints
 const endpoints = [
