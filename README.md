@@ -101,6 +101,6 @@ This project is a part of NJHACK. For more details, you can check out  [this lin
 
 <p align = "center"><img src = "https://user-images.githubusercontent.com/42573842/101052659-eb1b1600-35ac-11eb-9a80-cfaa33a29b04.png" alt = "NJHACK Logo" height=200px></p>
 <br>
-></div>
+</div>
 
 
